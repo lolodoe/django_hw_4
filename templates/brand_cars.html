@@ -1,33 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <style>
-        .post_bloke h1{
-            text-align: center;
-            color: #f5dd5d;
-        }
-        .post_bloke h5 {
-            text-align: center;
-            color: #3875d7;
-        }
+{% extends 'main.html' %}
+{% block brands %}
+    {% for brand in brands %}
 
-    </style>
-</head>
-<body >
-<div class="post_block">
-    <h1>{{ brand.name }}</h1>
-</div>
-<div class="comment">
-    {% for model in models %}
-        <div style="background-color: #fee415; text-align: center; height: 30vh; width: 60vh;">
-            <h3 style="color: purple">Модель машины: {{ model.name }}</h3>
-            <h5>Двигатель машины: {{ model.engine }}</h5>
-            <p>Лощадиная сила: {{ model.hp }}</p>
-            <p>Нютон момент: {{ model.nm }}</p>
-        </div>
+        <h1 style="margin-left: 70vh"><img width="200px" src="/media/{{ brand.photo }}" alt=""><a href="brands/{{ brand.id }}">{{ brand.name }}</a></h1>
     {% endfor %}
-</div>
-</body>
-</html>
+{% endblock %}

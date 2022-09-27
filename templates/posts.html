@@ -1,0 +1,22 @@
+{% extends 'main.html' %}
+{% block model %}
+    <div><img width="200px" src="/media/{{ model.photo }}" alt=""></div>
+    <h1>
+            <div style="margin-left: 500px">{{ brand.name }}</div>
+            <img style="margin-left: 420px" width="300px" src="/media/{{ brand.photo }}" alt="">
+        {% for model in models %}
+            {% if brand.name == model.brand.name %}
+                <div style="margin-left: 500px">
+                <h1><a href="/brands/{{ brand.id }}/models/{{ model.id }}">{{ model }}</a></h1>
+                </div>
+                <div style="margin-left: 500px" >
+                <h2>{{ model.engine }}</h2>
+                <h2>{{ model.hp }}</h2>
+                <h2>{{ model.nm }}</h2>
+                </div>
+
+            {% endif %}
+
+        {% endfor %}
+    </h1>
+{% endblock %}

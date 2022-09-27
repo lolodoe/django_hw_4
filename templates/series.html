@@ -1,0 +1,6 @@
+{% extends 'main.html' %}
+{% block series %}
+    {% for s in series %}
+        {{ s.name }}
+    {% endfor %}
+{% endblock %}
